@@ -14,14 +14,17 @@ h1 {
 }
 
 #startButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:1;
     color: gold;
     background-color: #222;
     border: 2px solid green;
     font-size: 24px;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 20px auto;
-    display: block;
 }
 
 .game-container {
@@ -39,7 +42,6 @@ h1 {
     font-size: 20px;
     width: 100%;
     text-align: left;
-    margin-left: 20px;
 }
 
 canvas {
