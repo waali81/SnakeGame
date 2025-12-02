@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Snake Game</h1>
+  <button id="startButton">Start Game</button>
+  <div class="game-container">
+    <p id="score">Points: 0</p>
+    <div id="gameModal" class="modal">
+      <div class="modal-content">
+        <span id="modalClose" class="close">&times;</span>
+        <p id="modalMessage"></p>
+        <button id="modalRestartButton">Restart Game</button>
+      </div>
+    </div>
+    <canvas id="game" width="400" height="400"></canvas>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
