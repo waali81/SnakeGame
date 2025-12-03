@@ -95,3 +95,38 @@ canvas {
     cursor: pointer;
     margin-top: 12px;
 }
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .game-container {
+        width: 95%;
+        max-width: 400px;
+        padding: 0;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+        margin: 6px 0;
+    }
+
+    #score {
+        text-align: center;
+    }
+    
+    .modal-content {
+        width: 90%;
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    #modalRestartButton {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
