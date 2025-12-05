@@ -20,6 +20,7 @@ let food = { x: 5, y: 5 };
 let score = 0;
 let gameRunning = false;
 let gameLoop = null;
+let nextDirection = { x: 0, y: 0 };
 
 // --- Pulssivaraus ruoan animaatiolle ---
 let foodPulse = 0;
@@ -75,13 +76,10 @@ function placeFood() {
     }
 }
 
-let nextDirection = { x: 0, y: 0 }; // Seuraava suunta päivitykselle
-
 // --- Pelin päivitys ---
 function updateGame() {
-        // Päivitä suunta vain jos pelaaja on valinnut jonkun suunnan
     if (nextDirection.x !== 0 || nextDirection.y !== 0) {
-        direction = nextDirection;
+        direction = nextDirection;  // Päivitä suunta vain kerran per frame
     }
 
     if (direction.x === 0 && direction.y === 0) return;
@@ -211,22 +209,22 @@ document.addEventListener("keydown", (event) => {
     switch(event.code) {
         case "ArrowUp":
         case "KeyW":
-            if (direction.y === 0) direction = { x: 0, y: -1 };
+            if (direction.y === 0) nextDirection = { x: 0, y: -1 };
             event.preventDefault();
             break;
         case "ArrowDown":
         case "KeyS":
-            if (direction.y === 0) direction = { x: 0, y: 1 };
+            if (direction.y === 0) nextDirection = { x: 0, y: 1 };
             event.preventDefault();
             break;
         case "ArrowLeft":
         case "KeyA":
-            if (direction.x === 0) direction = { x: -1, y: 0 };
+            if (direction.x === 0) nextDirection = { x: -1, y: 0 };
             event.preventDefault();
             break;
         case "ArrowRight":
         case "KeyD":
-            if (direction.x === 0) direction = { x: 1, y: 0 };
+            if (direction.x === 0) nextDirection = { x: 1, y: 0 };
             event.preventDefault();
             break;
     }
