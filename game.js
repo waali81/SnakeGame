@@ -179,6 +179,22 @@ function drawFood() {
 
 // --- Näppäimistön kuuntelu (Arrow + WASD) ---
 document.addEventListener("keydown", (event) => {
+    if (event.code === "Enter") {
+
+        // Jos modal näkyy, restart toimii enter-näppäimellä
+        if (modal.style.display === "flex") {
+            modal.style.display = "none";
+            startGame();
+            return;
+            }
+
+        // Jos peli ei ole käynnissä, käynnistys enter-painikkella
+        if (!gameRunning) {
+            startGame();
+            return;
+        }
+    }
+
     switch(event.code) {
         case "ArrowUp":
         case "KeyW":
