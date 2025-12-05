@@ -158,8 +158,12 @@ function draw() {
 // --- Käärmeen piirtäminen (gradientoitu) ---
 function drawSnake() {
     snake.forEach((segment, index) => {
+        if (index === 0) {
+            ctx.fillStyle = "green"; // Pään väri
+        } else { // Hännän väri gradienttina
         const ratio = index / snake.length;
         ctx.fillStyle = `rgb(${50 + 205 * ratio}, ${255 - 100 * ratio}, 50)`;
+        }
         ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
     });
 }
