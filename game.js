@@ -55,12 +55,14 @@ startButton.addEventListener("click", startGame);
 // --- Restart-nappi modaalissa ---
 modalStartButton.addEventListener("click", () => {
     modal.style.display = "none";
+    startButton.style.display = "block";
     startGame();
 });
 
 // --- Modaalin sulkeminen ---
 modalClose.addEventListener("click", () => {
     modal.style.display = "none";
+    startButton.style.display = "block";
 });
 
 // --- Ruoka satunnaiseen paikkaan ---
@@ -123,7 +125,7 @@ function endGame(message) {
     gameRunning = false;
     modalMessage.textContent = message;
     modal.style.display = "flex";
-    startButton.style.display = "block";
+    startButton.style.display = "none";
 }
 
 // --- Ruudukko kentälle ---
