@@ -75,8 +75,15 @@ function placeFood() {
     }
 }
 
+let nextDirection = { x: 0, y: 0 }; // Seuraava suunta päivitykselle
+
 // --- Pelin päivitys ---
 function updateGame() {
+        // Päivitä suunta vain jos pelaaja on valinnut jonkun suunnan
+    if (nextDirection.x !== 0 || nextDirection.y !== 0) {
+        direction = nextDirection;
+    }
+
     if (direction.x === 0 && direction.y === 0) return;
 
     moveSnake();
